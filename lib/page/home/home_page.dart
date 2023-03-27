@@ -7,6 +7,9 @@ import 'package:mall/page/home/swiper.dart';
 import 'package:mall/page/home/menu_bar.dart';
 // 新品推荐
 import 'package:mall/page/home/command_list.dart';
+// 热门商品
+import 'package:mall/page/home/hot_goods.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,7 +41,10 @@ Widget contentWidget() {
           child: Column(children: [
             Padding(padding: EdgeInsets.only(top: 10)),
             MenuBarList(),
-            CommandList()
+            Padding(padding: EdgeInsets.only(top: 10)),
+            CommandList(),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            HotGoods()
           ]),
         )
       ],
