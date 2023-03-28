@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+// 标题组件
+import 'package:mall/page/home/index_title.dart';
 class HotGoods extends StatefulWidget {
   const HotGoods({Key? key}) : super(key: key);
 
@@ -27,7 +28,7 @@ class _HotGoodsState extends State<HotGoods> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      const Text("热门商品"),
+      IndexTitle("热门商品"),
       Row(
         children: [
           Expanded(flex: 1, child: HotItem(_list)),

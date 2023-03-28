@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+// 标题组件
+import 'package:mall/page/home/index_title.dart';
 class CommandList extends StatefulWidget {
   const CommandList({Key? key}) : super(key: key);
 
@@ -14,10 +15,7 @@ class _CommandListState extends State<CommandList> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            "新品推荐",
-            textAlign: TextAlign.center,
-          ),
+          IndexTitle("热门商品"),
           Padding(padding: EdgeInsets.only(top: 10)),
           Image.network(
               "https://img1.baidu.com/it/u=1472391233,99561733&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500",

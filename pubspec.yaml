@@ -77,6 +77,8 @@ flutter:
   uses-material-design: true
   assets:
   -  assets/images/splash.webp
+  -  assets/images/title_left.png
+  -  assets/images/title_right.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
