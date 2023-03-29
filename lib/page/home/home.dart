@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:mall/constant/string.dart';
-
 // 首页
 import 'package:mall/page/home/home_page.dart';
 // 分类页

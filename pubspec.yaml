@@ -76,7 +76,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-  -  assets/images/splash.webp
+  -  assets/images/splash.jpeg
   -  assets/images/title_left.png
   -  assets/images/title_right.png
   -  assets/images/mine_bg.jpg

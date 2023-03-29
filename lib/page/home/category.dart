@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mall/utils/ScreenUtil.dart';
 
 class CategoryView extends StatefulWidget {
   const CategoryView({Key? key}) : super(key: key);
@@ -12,39 +11,54 @@ class CategoryView extends StatefulWidget {
 class _CategoryState extends State<CategoryView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: ScreenUtil().statusHeight + 5),
-      child: Column(children: [
-        Container(
-          padding: EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 20),
-          child: Row(
-            children: [
-              Expanded(
-                  child: ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 40),
-                child: TextField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(10.0),
-                    hintText: '搜索',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50)),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.grey,
+    MediaQueryData mediaQuery = MediaQuery.of(context);
+    return GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () {
+          // 触摸收起键盘
+          FocusScope.of(context).requestFocus(FocusNode());
+        },
+        child: Container(
+          padding: EdgeInsets.only(top: mediaQuery.padding.top + 5),
+          child: Column(children: [
+            Container(
+              padding: EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 20),
+              child: Row(
+                children: [
+                  Expanded(
+                      child: ConstrainedBox(
+                    constraints: BoxConstraints(maxHeight: 40),
+                    child: TextField(
+                      autofocus: false,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(10.0),
+                        hintText: '搜索',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50)),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide: BorderSide(
+                            color: Colors.deepOrange,
+                            width: 1.0,
+                          ),
+                        ),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.grey,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              )),
-              Container(
-                margin: EdgeInsets.only(left: 20),
-                child: Icon(Icons.add_shopping_cart),
-              )
-            ],
-          ),
-        ),
-        Expanded(child: CategoryMain())
-      ]),
-    );
+                  )),
+                  Container(
+                    margin: EdgeInsets.only(left: 20),
+                    child: Icon(Icons.add_shopping_cart),
+                  )
+                ],
+              ),
+            ),
+            Expanded(child: CategoryMain())
+          ]),
+        ));
   }
 }
 

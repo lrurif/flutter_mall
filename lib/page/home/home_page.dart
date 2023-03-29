@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-// 导入屏幕方法
-import 'package:mall/utils/ScreenUtil.dart';
+
 import 'package:mall/constant/string.dart';
 // 轮播图
 import 'package:mall/page/home/swiper.dart';
@@ -25,7 +24,6 @@ class _HomePageState extends State<HomePage> {
   
   @override
   Widget build(BuildContext context) {
-    ScreenUtil().init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(Strings.HOME),

@@ -27,10 +27,11 @@ class MallApp extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Application.router.generator,
-      initialRoute: "home",
+      initialRoute: "/",
       theme: ThemeData(
         primaryColor: Colors.deepOrange
       )

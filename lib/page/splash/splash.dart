@@ -13,7 +13,7 @@ class _SplashView extends State<SplashView> {
   int secord = 3;
   late Timer timer;
   void jumpToHome() {
-    // NavigatorUtils.goMallMainPage(context);
+    NavigatorUtils.goMallMainPage(context);
     timer.cancel();
   }
 
@@ -39,7 +39,7 @@ class _SplashView extends State<SplashView> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/splash.webp'),
+                image: AssetImage('assets/images/splash.jpeg'),
                 fit: BoxFit.cover,
               ),
             ),
