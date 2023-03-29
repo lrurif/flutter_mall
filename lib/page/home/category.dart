@@ -13,7 +13,7 @@ class _CategoryState extends State<CategoryView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: ScreenUtil().statusHeight),
+      padding: EdgeInsets.only(top: ScreenUtil().statusHeight + 5),
       child: Column(children: [
         Container(
           padding: EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 20),

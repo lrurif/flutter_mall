@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class SwiperView extends StatelessWidget {
   List swiperList = [
@@ -11,16 +11,16 @@ class SwiperView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      child: Swiper(
-        itemCount: swiperList.length,
-        itemBuilder: (context, index) {
-          return Image.network(
-            swiperList[index],
-            fit: BoxFit.fill,
-          );
-        },
-        pagination: SwiperPagination(),
-      ),
+      child: PageView.builder(
+          itemCount: swiperList.length,
+          pageSnapping: true,
+          itemBuilder: (context, pagePosition) {
+            return Container(
+                child: Image.network(
+              swiperList[pagePosition],
+              fit: BoxFit.fill,
+            ));
+          }),
     );
   }
 }
